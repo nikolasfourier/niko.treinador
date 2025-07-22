@@ -82,24 +82,6 @@
             background-color: #ffffff;
         }
 
-        /* Gym Carousel Styling */
-        .gym-carousel-container {
-            position: relative;
-        }
-        .gym-carousel {
-            width: 100%;
-            height: 450px; /* Fixed height for the carousel */
-            border-radius: 0.5rem;
-            overflow: hidden;
-        }
-        .gym-carousel .swiper-slide {
-            background-size: cover;
-            background-position: center;
-        }
-        .gym-carousel .swiper-pagination-bullet-active {
-            background-color: #ffffff;
-        }
-
         /* App Carousel Styling */
         .app-carousel-container {
             max-width: 300px; /* Width of a phone */
@@ -165,7 +147,7 @@
                         <p>Recupere sua autoestima, emagreça e conquiste sua melhor forma com treinos para casa ou academia, tudo ajustado para sua realidade.</p>
                         <p>Acredito que o fitness vai além do físico—trata-se de construir confiança, disciplina e uma mentalidade positiva que se reflete em todos os aspectos da vida. Seja presencialmente em nossa academia exclusiva ou através da minha assessoria online, estou comprometido com a sua transformação completa.</p>
                     </div>
-                    <div class="mt-10 p-6 border border-gray-800 rounded-lg bg-[#1f1f1f]">
+                    <div class="mt-10 p-6 border border-gray-800 rounded-lg bg-[#1f1f1f] transition-transform duration-300 hover:-translate-y-2">
                         <h3 class="text-3xl mb-6 text-brand-green">Credenciais e Conquistas</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                             <div>
@@ -220,18 +202,24 @@
     <!-- POSH PHYSICAL CENTER SECTION -->
     <section id="gym" class="py-20 md:py-32 bg-[#050505]">
         <div class="container mx-auto px-4 text-center">
-            <div class="max-w-4xl mx-auto bg-[#1f1f1f] p-8 md:p-12 rounded-lg border border-gray-700">
-                <h2 class="text-6xl md:text-7xl uppercase mb-4 text-brand-green">POSH PHYSICAL CENTER</h2>
-                <p class="max-w-3xl mx-auto text-lg text-gray-400 mb-12 font-light">Conheça nossa academia exclusiva em Jurerê Internacional, um espaço premium para transformar seu corpo com equipamentos de última geração.</p>
-                <div class="gym-carousel-container">
-                    <div class="swiper-container gym-carousel">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide" style="background-image: url('https://i.ibb.co/GfsmmBD9/FER-8793.jpg');"></div>
-                            <div class="swiper-slide" style="background-image: url('https://i.ibb.co/RVRzCPB/FER-8792.jpg');"></div>
-                            <div class="swiper-slide" style="background-image: url('https://i.ibb.co/FkCpTGS1/FER-8790.jpg');"></div>
-                            <div class="swiper-slide" style="background-image: url('https://i.ibb.co/R135ccb/FER-8788.jpg');"></div>
-                        </div>
-                        <div class="swiper-pagination"></div>
+            <h2 class="text-6xl md:text-7xl uppercase mb-12 text-brand-green">POSH PHYSICAL CENTER</h2>
+            <div class="max-w-4xl mx-auto bg-[#1f1f1f] p-8 md:p-12 rounded-lg border border-gray-700 transition-transform duration-300 hover:-translate-y-2">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <!-- Left Column: Text -->
+                    <div class="text-left text-gray-300 font-light flex flex-col space-y-10">
+                        <p class="text-xl leading-relaxed">"Conheça nossa academia boutique em Jurerê Internacional, um espaço premium para transformar seu corpo com equipamentos de última geração"</p>
+                        <p class="text-xl leading-relaxed">"Na POSH adquiri muita bagagem ao longo de 17 anos como professor, sócio, responsável técnico e treinador. Hoje ajudo pessoas a alcançarem seus objetivos aplicando tudo aquilo que aprendi, desenvolvi e aprimorei ao longo dessa jornada de forma Online, com segurança e muita eficiência."</p>
+                    </div>
+                    <!-- Right Column: Video -->
+                    <div class="w-full max-w-xs mx-auto flex items-center">
+                         <iframe
+                          class="rounded-md"
+                          src="https://player.cloudinary.com/embed/?cloud_name=dukcve8f5&public_id=VI%CC%81DEO-ESTRUTURA_ig3ll5&profile=cld-default&player[autoplay]=true&player[muted]=true&player[loop]=true"
+                          style="height: 100%; width: 100%; aspect-ratio: 9 / 16;"
+                          allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                          allowfullscreen
+                          frameborder="0"
+                        ></iframe>
                     </div>
                 </div>
             </div>
@@ -242,7 +230,7 @@
     <section id="strategy" class="py-20 md:py-32 bg-black">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-6xl md:text-7xl uppercase mb-12 text-brand-green">Grandes conquistas precisam de boas estratégias</h2>
-            <div x-data="{ expanded: false }" class="max-w-4xl mx-auto text-left bg-[#1f1f1f] p-8 rounded-lg border border-gray-700">
+            <div x-data="{ expanded: false }" class="max-w-4xl mx-auto text-left bg-[#1f1f1f] p-8 rounded-lg border border-gray-700 transition-transform duration-300 hover:-translate-y-2">
                 <div class="text-gray-300 text-base leading-relaxed space-y-4 font-light">
                     <p>Resultados consistentes exigem um método claro. O nome D.I.E. significa Direcionamento de Intensidade Estratégica, e ele é a base de como vamos, juntos, construir o seu resultado. Nosso processo é transparente e focado em você:</p>
                     <div x-show="expanded" x-transition.opacity.duration.500ms style="display: none;" class="space-y-4 overflow-hidden">
@@ -284,19 +272,19 @@
             <p class="text-xl text-white mt-4 mb-12 font-light">Porque esse método é o melhor pra mim?</p>
             
             <div class="max-w-4xl mx-auto text-left space-y-8">
-                <div>
+                <div class="transition-transform duration-300 hover:-translate-y-2">
                     <h4 class="text-2xl font-bold text-white mb-2">Chega de se sentir culpado</h4>
                     <div class="bg-[#1f1f1f] p-6 rounded-lg border border-gray-700"><p class="text-lg leading-relaxed font-light">Você não precisa de mais uma planilha de exercícios. Você precisa de uma <strong class="text-white font-bold">estratégia à prova de falhas</strong>. A verdade é que a vida acontece: reuniões se estendem, o cansaço bate, e a motivação desaparece. Planos de treino rígidos ignoram essa realidade e preparam você para o fracasso.</p></div>
                 </div>
-                <div>
+                <div class="transition-transform duration-300 hover:-translate-y-2">
                     <h4 class="text-2xl font-bold text-white mb-2">Um plano para a vida real</h4>
                     <div class="bg-[#1f1f1f] p-6 rounded-lg border border-gray-700"><p class="text-lg leading-relaxed font-light">O Método D.I.E. é a sua apólice de seguro contra a inconstância. O maior problema não é perder um treino, é o efeito que isso causa. Nosso método já prevê seus dias mais difíceis com o "Plano B": treinos mais curtos e estratégicos que garantem seu progresso e mantêm sua mente no jogo.</p></div>
                 </div>
-                <div>
+                <div class="transition-transform duration-300 hover:-translate-y-2">
                     <h4 class="text-2xl font-bold text-white mb-2">Inteligência, não apenas força bruta</h4>
                     <div class="bg-[#1f1f1f] p-6 rounded-lg border border-gray-700"><p class="text-lg leading-relaxed font-light">Treinar pesado sem direção é como dar socos no escuro. O D.I.E. usa a periodização para direcionar a intensidade de forma inteligente. Isso significa que cada fase do seu treino tem um propósito claro, otimizando seus ganhos e prevenindo o desgaste.</p></div>
                 </div>
-                <div>
+                <div class="transition-transform duration-300 hover:-translate-y-2">
                     <h4 class="text-2xl font-bold text-white mb-2">Feito para você, não o contrário</h4>
                     <div class="bg-[#1f1f1f] p-6 rounded-lg border border-gray-700"><p class="text-lg leading-relaxed font-light">Nós não entregamos um plano e esperamos que você se vire. Nós analisamos sua rotina, seus equipamentos, suas preferências e, principalmente, seus obstáculos. O plano se molda a você, te dando as ferramentas para praticar, porque de nada adianta a melhor estratégia do mundo se ela fica só no papel.</p></div>
                 </div>
@@ -312,15 +300,15 @@
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
-                <div class="bg-[#1f1f1f] p-8 rounded-lg border border-gray-700">
+                <div class="bg-[#1f1f1f] p-8 rounded-lg border border-gray-700 transition-transform duration-300 hover:-translate-y-2">
                     <img src="https://img.icons8.com/ios/100/ffffff/target.png" alt="Ícone de alvo" class="h-20 w-20 mx-auto mb-4 invert brightness-0"/>
                     <h3 class="text-3xl mb-3">Direcionamento</h3><p class="text-gray-400 leading-relaxed font-light">Foco preciso nas áreas e objetivos que realmente importam para você.</p>
                 </div>
-                <div class="bg-[#1f1f1f] p-8 rounded-lg border border-gray-700">
+                <div class="bg-[#1f1f1f] p-8 rounded-lg border border-gray-700 transition-transform duration-300 hover:-translate-y-2">
                      <img src="https://img.icons8.com/ios/100/ffffff/speedometer.png" alt="Ícone de velocímetro" class="h-20 w-20 mx-auto mb-4 invert brightness-0"/>
                      <h3 class="text-3xl mb-3">Intensidade</h3><p class="text-gray-400 leading-relaxed font-light">Aplicação científica da intensidade ideal para maximizar resultados sem sobrecarregar o corpo.</p>
                 </div>
-                <div class="bg-[#1f1f1f] p-8 rounded-lg border border-gray-700">
+                <div class="bg-[#1f1f1f] p-8 rounded-lg border border-gray-700 transition-transform duration-300 hover:-translate-y-2">
                      <img src="https://img.icons8.com/ios/100/ffffff/light-on--v1.png" alt="Ícone de lâmpada" class="h-20 w-20 mx-auto mb-4 invert brightness-0"/>
                      <h3 class="text-3xl mb-3">Estratégica</h3><p class="text-gray-400 leading-relaxed font-light">Planejamento meticuloso que evolui constantemente para superar platôs e garantir progresso contínuo.</p>
                 </div>
@@ -329,18 +317,6 @@
             <p class="max-w-4xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed font-light">
                 No método D.I.E. a intensidade é levada a sério, mas sempre de forma focada e inteligente. Exercícios inteligentes, dinâmicos, do básico que funciona aos exercícios diferentes que são o diferencial do meu programa. Exercícios com técnicas que farão você sentir seus músculos trabalhando de forma intensa, sem dores desnecessárias, sem lesões.
             </p>
-        </div>
-    </section>
-
-    <!-- VIDEO SHOWCASE SECTION -->
-    <section id="video-showcase" class="py-20 md:py-32 bg-[#050505]">
-        <div class="container mx-auto px-4">
-            <div class="max-w-5xl mx-auto rounded-lg overflow-hidden shadow-2xl shadow-black">
-                <video class="w-full h-full object-cover" autoplay loop muted playsinline poster="https://placehold.co/1920x1080/000000/ffffff?text=Carregando+V%C3%ADdeo...">
-                    <source src="https://videos.pexels.com/video-files/4761352/4761352-hd_1920_1080_25fps.mp4" type="video/mp4">
-                    Seu navegador não suporta a tag de vídeo.
-                </video>
-            </div>
         </div>
     </section>
 
@@ -369,7 +345,7 @@
                 </div>
 
                 <div class="flex justify-center">
-                    <div class="app-carousel-container">
+                    <div class="app-carousel-container transition-transform duration-300 hover:scale-105">
                         <div class="swiper-container app-carousel">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide"><img src="https://i.ibb.co/twZp8jRr/Screenshot-.jpg" alt="Screenshot do aplicativo de treino" onerror="this.onerror=null;this.src='https://placehold.co/300x600/1f2937/f3f4f6?text=App';"></div>
@@ -396,7 +372,7 @@
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto items-stretch">
                 <!-- Presencial Card -->
-                <div class="bg-[#1f1f1f] rounded-lg p-8 lg:p-10 flex flex-col border border-gray-700 h-full">
+                <div class="bg-[#1f1f1f] rounded-lg p-8 lg:p-10 flex flex-col border border-gray-700 h-full transition-transform duration-300 hover:-translate-y-2">
                     <h3 class="text-4xl mb-6 text-white">Personal Training Presencial</h3>
                     <ul class="space-y-4 text-gray-300 mb-8 flex-grow font-light">
                         <li class="flex items-start"><svg class="w-5 h-5 text-brand-green mr-3 mt-1 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg><span>Treine comigo na Posh em Jurerê</span></li>
@@ -412,7 +388,7 @@
                     </a>
                 </div>
                 <!-- Online Card -->
-                <div class="bg-[#1f1f1f] rounded-lg p-8 lg:p-10 flex flex-col border border-gray-700 h-full">
+                <div class="bg-[#1f1f1f] rounded-lg p-8 lg:p-10 flex flex-col border border-gray-700 h-full transition-transform duration-300 hover:-translate-y-2">
                     <h3 class="text-4xl mb-6 text-white">Assessoria Online</h3>
                     <ul class="space-y-4 text-gray-300 mb-8 flex-grow font-light">
                         <li class="flex items-start"><svg class="w-5 h-5 text-brand-green mr-3 mt-1 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg><span>Treine com acompanhamento completo de onde estiver</span></li>
@@ -441,7 +417,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto items-stretch">
                 
                 <!-- Semestral Plan Card -->
-                <div class="bg-[#1f1f1f] rounded-lg p-8 flex flex-col border border-gray-700 h-full">
+                <div class="bg-[#1f1f1f] rounded-lg p-8 flex flex-col border border-gray-700 h-full transition-transform duration-300 hover:-translate-y-2">
                     <h3 class="text-4xl mb-2 text-white">Plano Semestral</h3>
                     <p class="text-lg text-gray-400 mb-6 font-light">Valor sob consulta</p>
                     
@@ -456,7 +432,7 @@
                 </div>
 
                 <!-- Anual Plan Card (Highlighted) -->
-                <div class="bg-[#1f1f1f] rounded-lg p-8 flex flex-col h-full relative border-2 border-brand-green">
+                <div class="bg-[#1f1f1f] rounded-lg p-8 flex flex-col h-full relative border-2 border-brand-green transition-transform duration-300 hover:-translate-y-2">
                     <span class="absolute top-0 right-0 bg-brand-green text-white text-sm font-semibold px-4 py-1 rounded-bl-lg" style="font-family: 'Montserrat', sans-serif;">Mais Recomendado</span>
                     <h3 class="text-4xl mb-2 text-white">Plano Anual</h3>
                     <ul class="space-y-3 text-gray-300 mb-6 flex-grow font-light mt-6">
@@ -478,7 +454,7 @@
     <section id="objection-handling" class="py-20 md:py-32 bg-black">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl uppercase mb-8 text-brand-green">"A jornada fitness é cheia de obstáculos, mas o maior inimigo do seu resultado não é a falta de vontade, e sim a falta de um plano para os dias de caos. De que adianta ter o "melhor treino do mundo" se ele não se encaixa na sua vida real e te faz sentir culpado por não conseguir cumpri-lo?"</h2>
-            <div class="max-w-4xl mx-auto bg-[#1f1f1f] p-8 md:p-12 rounded-lg border border-gray-700">
+            <div class="max-w-4xl mx-auto bg-[#1f1f1f] p-8 md:p-12 rounded-lg border border-gray-700 transition-transform duration-300 hover:-translate-y-2">
                 <p class="text-lg text-gray-400 leading-relaxed font-light">Meu método ataca exatamente essa falha. Ele não apenas personaliza seu treino, mas prevê as dificuldades da sua rotina. Com o Direcionamento de Intensidade Estratégica (D.I.E.), você tem as ferramentas para se manter no caminho certo, mesmo quando tudo parece dar errado. Chega de frustração, é hora de ter um plano que realmente funciona para você.</p>
             </div>
         </div>
@@ -492,13 +468,13 @@
                 <p class="max-w-2xl mx-auto text-lg text-gray-400 mt-4 font-light">Seu caminho para a transformação em 7 passos simples e diretos.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-                <div class="bg-[#1f1f1f] p-6 rounded-lg border border-gray-700"><span class="text-5xl font-heading text-gray-600">1</span><h3 class="text-2xl mt-2 mb-2">Contratação e Anamnese</h3><p class="font-light text-gray-400">Após o contato inicial, realizamos uma anamnese detalhada para entender seu histórico, objetivos e limitações.</p></div>
-                <div class="bg-[#1f1f1f] p-6 rounded-lg border border-gray-700"><span class="text-5xl font-heading text-gray-600">2</span><h3 class="text-2xl mt-2 mb-2">Avaliação Funcional</h3><p class="font-light text-gray-400">Através de vídeos e questionários específicos, realizamos uma avaliação funcional completa.</p></div>
-                <div class="bg-[#1f1f1f] p-6 rounded-lg border border-gray-700"><span class="text-5xl font-heading text-gray-600">3</span><h3 class="text-2xl mt-2 mb-2">Montagem do Programa</h3><p class="font-light text-gray-400">Com base nas informações coletadas, desenvolvemos um programa de treinamento personalizado.</p></div>
-                <div class="bg-[#1f1f1f] p-6 rounded-lg border border-gray-700"><span class="text-5xl font-heading text-gray-600">4</span><h3 class="text-2xl mt-2 mb-2">Início do Programa</h3><p class="font-light text-gray-400">Você recebe seu programa detalhado com vídeos explicativos de cada exercício.</p></div>
-                <div class="bg-[#1f1f1f] p-6 rounded-lg border border-gray-700"><span class="text-5xl font-heading text-gray-600">5</span><h3 class="text-2xl mt-2 mb-2">Acompanhamento Contínuo</h3><p class="font-light text-gray-400">Você tem suporte integral via WhatsApp para tirar dúvidas e receber feedback.</p></div>
-                <div class="bg-[#1f1f1f] p-6 rounded-lg border border-gray-700"><span class="text-5xl font-heading text-gray-600">6</span><h3 class="text-2xl mt-2 mb-2">Reunião Mensal</h3><p class="font-light text-gray-400">A cada mês, realizamos uma reunião online para avaliar seu progresso e ajustar estratégias.</p></div>
-                <div class="bg-[#1f1f1f] p-6 rounded-lg border border-gray-700 col-span-1 md:col-span-2 lg:col-span-2"><span class="text-5xl font-heading text-gray-600">7</span><h3 class="text-2xl mt-2 mb-2">Evolução Contínua</h3><p class="font-light text-gray-400">Seu programa é constantemente atualizado com base no seu progresso, garantindo sua evolução.</p></div>
+                <div class="bg-[#1f1f1f] p-6 rounded-lg border border-gray-700 transition-transform duration-300 hover:-translate-y-2"><span class="text-5xl font-heading text-gray-600">1</span><h3 class="text-2xl mt-2 mb-2">Contratação e Anamnese</h3><p class="font-light text-gray-400">Após o contato inicial, realizamos uma anamnese detalhada para entender seu histórico, objetivos e limitações.</p></div>
+                <div class="bg-[#1f1f1f] p-6 rounded-lg border border-gray-700 transition-transform duration-300 hover:-translate-y-2"><span class="text-5xl font-heading text-gray-600">2</span><h3 class="text-2xl mt-2 mb-2">Avaliação Funcional</h3><p class="font-light text-gray-400">Através de vídeos e questionários específicos, realizamos uma avaliação funcional completa.</p></div>
+                <div class="bg-[#1f1f1f] p-6 rounded-lg border border-gray-700 transition-transform duration-300 hover:-translate-y-2"><span class="text-5xl font-heading text-gray-600">3</span><h3 class="text-2xl mt-2 mb-2">Montagem do Programa</h3><p class="font-light text-gray-400">Com base nas informações coletadas, desenvolvemos um programa de treinamento personalizado.</p></div>
+                <div class="bg-[#1f1f1f] p-6 rounded-lg border border-gray-700 transition-transform duration-300 hover:-translate-y-2"><span class="text-5xl font-heading text-gray-600">4</span><h3 class="text-2xl mt-2 mb-2">Início do Programa</h3><p class="font-light text-gray-400">Você recebe seu programa detalhado com vídeos explicativos de cada exercício.</p></div>
+                <div class="bg-[#1f1f1f] p-6 rounded-lg border border-gray-700 transition-transform duration-300 hover:-translate-y-2"><span class="text-5xl font-heading text-gray-600">5</span><h3 class="text-2xl mt-2 mb-2">Acompanhamento Contínuo</h3><p class="font-light text-gray-400">Você tem suporte integral via WhatsApp para tirar dúvidas e receber feedback.</p></div>
+                <div class="bg-[#1f1f1f] p-6 rounded-lg border border-gray-700 transition-transform duration-300 hover:-translate-y-2"><span class="text-5xl font-heading text-gray-600">6</span><h3 class="text-2xl mt-2 mb-2">Reunião Mensal</h3><p class="font-light text-gray-400">A cada mês, realizamos uma reunião online para avaliar seu progresso e ajustar estratégias.</p></div>
+                <div class="bg-[#1f1f1f] p-6 rounded-lg border border-gray-700 col-span-1 md:col-span-2 lg:col-span-2 transition-transform duration-300 hover:-translate-y-2"><span class="text-5xl font-heading text-gray-600">7</span><h3 class="text-2xl mt-2 mb-2">Evolução Contínua</h3><p class="font-light text-gray-400">Seu programa é constantemente atualizado com base no seu progresso, garantindo sua evolução.</p></div>
             </div>
         </div>
     </section>
@@ -510,7 +486,7 @@
                 <h2 class="text-5xl md:text-6xl uppercase text-white">Perguntas Frequentes</h2>
             </div>
             <div class="max-w-3xl mx-auto space-y-6 text-left">
-                 <div x-data="{ open: false }" class="bg-[#1f1f1f] rounded-lg border border-gray-700">
+                 <div x-data="{ open: false }" class="bg-[#1f1f1f] rounded-lg border border-gray-700 transition-transform duration-300 hover:-translate-y-2">
                     <button @click="open = !open" class="w-full flex justify-between items-center text-left p-6">
                         <h3 class="text-xl font-bold text-white">"Não tenho disciplina para treinar online."</h3>
                         <svg :class="{'rotate-180': open}" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
@@ -519,7 +495,7 @@
                         <p class="text-gray-400 font-light">Os outros métodos falharam porque não tinham uma estratégia para a sua vida real. Meu trabalho é te ensinar a treinar e te dar as ferramentas para os dias difíceis. Com a análise de vídeos e nosso contato diário, vamos construir sua autonomia e garantir que o compromisso se transforme em um hábito para a vida toda.</p>
                     </div>
                 </div>
-                 <div x-data="{ open: false }" class="bg-[#1f1f1f] rounded-lg border border-gray-700">
+                 <div x-data="{ open: false }" class="bg-[#1f1f1f] rounded-lg border border-gray-700 transition-transform duration-300 hover:-translate-y-2">
                     <button @click="open = !open" class="w-full flex justify-between items-center text-left p-6">
                         <h3 class="text-xl font-bold text-white">"Não tenho equipamentos."</h3>
                         <svg :class="{'rotate-180': open}" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
@@ -528,7 +504,7 @@
                         <p class="text-gray-400 font-light">Minha vasta experiência com calistenia me garante criar treinos dinâmicos e funcionais para qualquer ambiente. Vamos extrair o melhor de você com as ferramentas que possuirmos. Uma academia completa é melhor, mas a gente trabalha com o que temos HOJE! Vou fazer você me enviar vídeos do seu ambiente, dos seus equipamentos, e vou construir tudo para que se encaixe nas suas possibilidades.</p>
                     </div>
                 </div>
-                 <div x-data="{ open: false }" class="bg-[#1f1f1f] rounded-lg border border-gray-700">
+                 <div x-data="{ open: false }" class="bg-[#1f1f1f] rounded-lg border border-gray-700 transition-transform duration-300 hover:-translate-y-2">
                     <button @click="open = !open" class="w-full flex justify-between items-center text-left p-6">
                         <h3 class="text-xl font-bold text-white">"Tenho medo de me lesionar."</h3>
                         <svg :class="{'rotate-180': open}" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
@@ -537,7 +513,7 @@
                         <p class="text-gray-400 font-light">Treinar pesado é o erro! O treino tem que ser INTENSO, não só pesado. Peso é só uma das variáveis. Com minha especialização em Biomecânica, vamos melhorar sua mobilidade para trabalhar com mais amplitude, garantindo máximo estímulo muscular com menos carga e menos estresse desnecessário nas articulações. A técnica que ensino e corrijo garante que seus movimentos sejam seguros. O sucesso é garantido.</p>
                     </div>
                 </div>
-                 <div x-data="{ open: false }" class="bg-[#1f1f1f] rounded-lg border border-gray-700">
+                 <div x-data="{ open: false }" class="bg-[#1f1f1f] rounded-lg border border-gray-700 transition-transform duration-300 hover:-translate-y-2">
                     <button @click="open = !open" class="w-full flex justify-between items-center text-left p-6">
                         <h3 class="text-xl font-bold text-white">"Minha rotina é caótica, não tenho tempo."</h3>
                         <svg :class="{'rotate-180': open}" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
@@ -561,7 +537,7 @@
                 Comece Sua Transformação Hoje!
             </a>
 
-            <div class="max-w-4xl mx-auto bg-[#1f1f1f] border border-gray-700 rounded-lg p-8 text-left">
+            <div class="max-w-4xl mx-auto bg-[#1f1f1f] border border-gray-700 rounded-lg p-8 text-left transition-transform duration-300 hover:-translate-y-2">
                 <h3 class="text-3xl mb-4">Não deixe para depois o que pode mudar sua vida agora.</h3>
                 <p class="text-gray-400 mb-6 font-light">Agende uma videochamada gratuita comigo, Niko Fourier, e vamos juntos entender suas necessidades e criar um plano personalizado para seus objetivos.</p>
                 <h4 class="text-2xl mb-4">Na consulta gratuita você vai:</h4>
@@ -584,7 +560,7 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="h-96 lg:h-full w-full rounded-lg overflow-hidden border border-gray-800">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3538.932331530444!2d-48.4411188849427!3d-27.47101098287715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9527418554170d9f%3A0x6c4b223a2b75b2b2!2sR.%20das%20Algas%2C%20733%20-%20Jurer%C3%AA%2C%20Florian%C3%B3polis%20-%20SC%2C%2088053-505!5e0!3m2!1spt-BR!2sbr!4v1689800000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3538.932331530444!2d-48.4411188849427!3d-27.47101098287715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9527418554170d9f%3A0x6c4b223a2b75b2b2!2sR.%20das%20Algas%2C%20733%20-%20Jurer%C3%AA%2C%20Florian%C3%Bópolis%20-%20SC%2C%2088053-505!5e0!3m2!1spt-BR!2sbr!4v1689800000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="text-center lg:text-left">
                     <h3 class="text-4xl mb-6">Entre em Contato</h3>
@@ -634,21 +610,6 @@
                 autoplay: { delay: 3000, disableOnInteraction: false },
                 pagination: { el: '.about-carousel .swiper-pagination', clickable: true },
                 navigation: { nextEl: '.about-carousel .swiper-button-next', prevEl: '.about-carousel .swiper-button-prev' },
-            });
-
-            // Initialize Gym Carousel
-            new Swiper('.gym-carousel', {
-                loop: true,
-                slidesPerView: 1,
-                effect: 'fade',
-                autoplay: { 
-                    delay: 3000, 
-                    disableOnInteraction: false 
-                },
-                pagination: { 
-                    el: '.gym-carousel .swiper-pagination', 
-                    clickable: true 
-                },
             });
             
             // Initialize App Carousel
