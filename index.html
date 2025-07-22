@@ -13,7 +13,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     
     <!-- Alpine.js for Interactions -->
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -245,7 +245,7 @@
             <div x-data="{ expanded: false }" class="max-w-4xl mx-auto text-left bg-[#1f1f1f] p-8 rounded-lg border border-gray-700">
                 <div class="text-gray-300 text-base leading-relaxed space-y-4 font-light">
                     <p>Resultados consistentes exigem um método claro. O nome D.I.E. significa Direcionamento de Intensidade Estratégica, e ele é a base de como vamos, juntos, construir o seu resultado. Nosso processo é transparente e focado em você:</p>
-                    <div x-show="expanded" style="display: none;" class="space-y-4 overflow-hidden">
+                    <div x-show="expanded" x-transition.opacity.duration.500ms style="display: none;" class="space-y-4 overflow-hidden">
                         <p><strong>1. Diagnóstico Completo (A Anamnese):</strong><br>Tudo começa aqui. Mas não queremos saber apenas seus objetivos; queremos entender seus problemas. Qual sua maior dificuldade? O que já te fez desistir antes? Qual a sua rotina real? Esse é o nosso ponto de partida para criar uma estratégia que funcione de verdade.</p>
                         <p><strong>2. Planejamento Estratégico (O Cérebro do D.I.E.):</strong><br>Com seu diagnóstico em mãos, eu desenho sua periodização. Definimos as fases de treino (força, hipertrofia, resistência) e, o mais importante, criamos seu arsenal de "Planos B". Você saberá exatamente o que fazer quando tiver apenas 30 minutos ou pouca energia, garantindo que nunca mais fique sem opção.</p>
                         <p><strong>3. Execução e Acompanhamento (A Prática no App):</strong><br>Você recebe tudo de forma simples e intuitiva no aplicativo, com vídeos e instruções claras. Mas a tecnologia é apenas a ferramenta. O diferencial está no meu acompanhamento diário via WhatsApp. Vou analisar seus vídeos, tirar suas dúvidas e faremos os ajustes necessários para garantir que a estratégia esteja sempre alinhada à sua evolução.</p>
@@ -254,7 +254,7 @@
                 </div>
                 <button @click="expanded = !expanded" class="mt-6 text-white font-bold uppercase tracking-wider hover:text-gray-400 transition-colors duration-300 text-sm">
                     <span x-show="!expanded">Ler mais...</span>
-                    <span x-show="expanded">Ler menos...</span>
+                    <span x-show="expanded" style="display: none;">Ler menos...</span>
                 </button>
             </div>
 
@@ -387,48 +387,53 @@
         </div>
     </section>
     
-    <!-- PLANS SECTION (PRESENCIAL/ONLINE) -->
-    <section id="plans" class="py-20 md:py-32 bg-[#050505]">
+    <!-- MODALITIES SECTION -->
+    <section id="modalities" class="py-20 md:py-32 bg-black">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-                
-                <div class="bg-[#1f1f1f] rounded-lg p-8 flex flex-col border border-gray-700">
-                    <h3 class="text-4xl uppercase mb-4">Personal Training Presencial</h3>
-                    <p class="text-gray-400 mb-6 flex-grow font-light">Treinamento personalizado na Posh Physical Center em Jurerê Internacional, com acompanhamento exclusivo e programas adaptados às suas necessidades específicas.</p>
-                    <ul class="space-y-4 text-gray-300 mb-8 font-light">
-                        <li class="flex items-center"><svg class="w-5 h-5 text-white mr-3 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Avaliação física completa</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-white mr-3 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Sessões de 1h com acompanhamento exclusivo</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-white mr-3 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Pacotes por crédito ou mensalidade</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-white mr-3 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Na melhor academia de Jurerê</li>
+            <div class="text-center mb-16">
+                <h2 class="text-6xl md:text-7xl uppercase text-brand-green">Modalidades de Treinamento</h2>
+                <p class="max-w-2xl mx-auto text-lg text-gray-400 mt-4 font-light">Escolha o formato que melhor se adapta à sua rotina e objetivos.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto items-stretch">
+                <!-- Presencial Card -->
+                <div class="bg-[#1f1f1f] rounded-lg p-8 lg:p-10 flex flex-col border border-gray-700 h-full">
+                    <h3 class="text-4xl mb-6 text-white">Personal Training Presencial</h3>
+                    <ul class="space-y-4 text-gray-300 mb-8 flex-grow font-light">
+                        <li class="flex items-start"><svg class="w-5 h-5 text-brand-green mr-3 mt-1 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg><span>Treine comigo na Posh em Jurerê</span></li>
+                        <li class="flex items-start"><svg class="w-5 h-5 text-brand-green mr-3 mt-1 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg><span>Avaliação funcional completa</span></li>
+                        <li class="flex items-start"><svg class="w-5 h-5 text-brand-green mr-3 mt-1 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg><span>Treinos de acordo com seus objetivos</span></li>
+                        <li class="flex items-start"><svg class="w-5 h-5 text-brand-green mr-3 mt-1 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg><span>Reabilitação e prevenção de lesões</span></li>
+                        <li class="flex items-start"><svg class="w-5 h-5 text-brand-green mr-3 mt-1 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg><span>Treinos de 1h com agenda fixa ou flexível</span></li>
+                        <li class="flex items-start"><svg class="w-5 h-5 text-brand-green mr-3 mt-1 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg><span>Planos por mensalidade ou créditos de aula</span></li>
+                        <li class="flex items-start"><svg class="w-5 h-5 text-brand-green mr-3 mt-1 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg><span>Hipertrofia, emagrecimento, condicionamento e mais</span></li>
                     </ul>
-                    <a href="https://wa.me/554899157545" target="_blank" class="mt-auto w-full bg-brand-green text-white font-bold py-3 px-6 rounded-full uppercase tracking-wider flex items-center justify-center hover:bg-brand-green-dark transition-colors duration-300">
-                        Fale Comigo no WhatsApp
+                    <a href="https://wa.me/554899157545" target="_blank" class="mt-auto w-full text-center bg-transparent border-2 border-brand-green text-brand-green font-bold py-3 px-6 rounded-full uppercase tracking-wider hover:bg-brand-green hover:text-white transition-colors duration-300">
+                        Me chame no whatsapp para maiores informações!
                     </a>
                 </div>
-
-                <div class="bg-[#1f1f1f] rounded-lg p-8 flex flex-col border border-gray-700">
-                    <h3 class="text-4xl uppercase mb-4">Assessoria Online</h3>
-                    <p class="text-gray-400 mb-6 flex-grow font-light">Programa de treinamento remoto com acompanhamento contínuo, ideal para quem não está em Jurerê ou prefere treinar com flexibilidade de horários.</p>
-                    <ul class="space-y-4 text-gray-300 mb-8 font-light">
-                        <li class="flex items-center"><svg class="w-5 h-5 text-white mr-3 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Atualização mensal do programa</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-white mr-3 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Análise de vídeos de execução</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-white mr-3 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Suporte 24/7 via WhatsApp</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-white mr-3 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Treine onde e quando quiser</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-white mr-3 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Treinos 100% individualizados</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-white mr-3 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Metodologia própria que se adapta à você</li>
+                <!-- Online Card -->
+                <div class="bg-[#1f1f1f] rounded-lg p-8 lg:p-10 flex flex-col border border-gray-700 h-full">
+                    <h3 class="text-4xl mb-6 text-white">Assessoria Online</h3>
+                    <ul class="space-y-4 text-gray-300 mb-8 flex-grow font-light">
+                        <li class="flex items-start"><svg class="w-5 h-5 text-brand-green mr-3 mt-1 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg><span>Treine com acompanhamento completo de onde estiver</span></li>
+                        <li class="flex items-start"><svg class="w-5 h-5 text-brand-green mr-3 mt-1 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg><span>App com vídeos e tudo que você precisa</span></li>
+                        <li class="flex items-start"><svg class="w-5 h-5 text-brand-green mr-3 mt-1 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg><span>Flexibilidade para treinar sem hora marcada</span></li>
+                        <li class="flex items-start"><svg class="w-5 h-5 text-brand-green mr-3 mt-1 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg><span>Menor investimento se comparado ao presencial</span></li>
+                        <li class="flex items-start"><svg class="w-5 h-5 text-brand-green mr-3 mt-1 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg><span>Rotina 100% adaptada a você</span></li>
+                        <li class="flex items-start"><svg class="w-5 h-5 text-brand-green mr-3 mt-1 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg><span>Atualizações mensais</span></li>
+                        <li class="flex items-start"><svg class="w-5 h-5 text-brand-green mr-3 mt-1 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg><span>Guias práticos sobre suplementação e alimentação</span></li>
                     </ul>
-                     <a href="https://wa.me/554899157545" target="_blank" class="mt-auto w-full bg-brand-green text-white font-bold py-3 px-6 rounded-full uppercase tracking-wider flex items-center justify-center hover:bg-brand-green-dark transition-colors duration-300">
-                        Fale Comigo no WhatsApp
+                     <a href="#online-coaching-plans" class="mt-auto w-full text-center bg-brand-green text-white font-bold py-3 px-6 rounded-full uppercase tracking-wider hover:bg-brand-green-dark transition-colors duration-300">
+                        Vamos conversar! Me chame no Whatsapp
                     </a>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- ONLINE COACHING PLANS SECTION -->
-    <section id="online-coaching-plans" class="py-20 md:py-32 bg-black">
-        <div class="container mx-auto px-6">
+    <section id="online-coaching-plans" class="py-20 md:py-32 bg-[#050505]">
+        <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-6xl md:text-7xl uppercase mb-4 text-brand-green">Planos de Assessoria Online</h2>
             </div>
@@ -461,23 +466,26 @@
                         <li class="flex"><svg class="w-5 h-5 text-brand-green mr-3 mt-1 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg><span>Prioridade no atendimento e suporte</span></li>
                         <li class="flex"><svg class="w-5 h-5 text-brand-green mr-3 mt-1 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg><span>Grupo exclusivo com treinos, dicas, desafios e eventos de comunidade</span></li>
                     </ul>
+                    <p class="text-gray-400 font-light text-sm italic mt-auto pt-6">
+                        Consulte mais informações e vantagens do melhor custo beneficio que ofereço para meus clientes anuais
+                    </p>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- OBJECTION HANDLING SECTION -->
-    <section id="objection-handling" class="py-20 md:py-32 bg-[#050505]">
+    <section id="objection-handling" class="py-20 md:py-32 bg-black">
         <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl uppercase mb-8 text-brand-green">"A jornada fitness é cheia de obstáculos, mas o maior inimigo do seu resultado não é a falta de vontade, e sim a falta de um plano para os dias de caos. De que adianta ter o "melhor treino do mundo" se ele não se encaixa na sua vida real e te faz sentir culpado por não conseguir cumpri-lo?"</h2>
             <div class="max-w-4xl mx-auto bg-[#1f1f1f] p-8 md:p-12 rounded-lg border border-gray-700">
-                <p class="text-xl md:text-2xl text-gray-300 leading-relaxed mb-6 font-light">"A jornada fitness é cheia de obstáculos, mas o maior inimigo do seu resultado não é a falta de vontade, e sim a <strong class="text-white">falta de um plano para os dias de caos.</strong> De que adianta ter o "melhor treino do mundo" se ele não se encaixa na sua vida real e te faz sentir culpado por não conseguir cumpri-lo?"</p>
                 <p class="text-lg text-gray-400 leading-relaxed font-light">Meu método ataca exatamente essa falha. Ele não apenas personaliza seu treino, mas prevê as dificuldades da sua rotina. Com o Direcionamento de Intensidade Estratégica (D.I.E.), você tem as ferramentas para se manter no caminho certo, mesmo quando tudo parece dar errado. Chega de frustração, é hora de ter um plano que realmente funciona para você.</p>
             </div>
         </div>
     </section>
 
     <!-- HOW IT WORKS (7 STEPS) SECTION -->
-    <section id="how-it-works" class="py-20 md:py-32 bg-black">
+    <section id="how-it-works" class="py-20 md:py-32 bg-[#050505]">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-6xl md:text-7xl uppercase text-brand-green">Como Funciona a Assessoria</h2>
@@ -496,7 +504,7 @@
     </section>
 
     <!-- FAQ SECTION -->
-    <section id="faq" class="py-20 md:py-32 bg-[#050505]">
+    <section id="faq" class="py-20 md:py-32 bg-black">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-5xl md:text-6xl uppercase text-white">Perguntas Frequentes</h2>
@@ -507,7 +515,7 @@
                         <h3 class="text-xl font-bold text-white">"Não tenho disciplina para treinar online."</h3>
                         <svg :class="{'rotate-180': open}" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                     </button>
-                    <div x-show="open" x-transition class="p-6 pt-0">
+                    <div x-show="open" x-transition class="p-6 pt-0" style="display: none;">
                         <p class="text-gray-400 font-light">Os outros métodos falharam porque não tinham uma estratégia para a sua vida real. Meu trabalho é te ensinar a treinar e te dar as ferramentas para os dias difíceis. Com a análise de vídeos e nosso contato diário, vamos construir sua autonomia e garantir que o compromisso se transforme em um hábito para a vida toda.</p>
                     </div>
                 </div>
@@ -516,7 +524,7 @@
                         <h3 class="text-xl font-bold text-white">"Não tenho equipamentos."</h3>
                         <svg :class="{'rotate-180': open}" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                     </button>
-                    <div x-show="open" x-transition class="p-6 pt-0">
+                    <div x-show="open" x-transition class="p-6 pt-0" style="display: none;">
                         <p class="text-gray-400 font-light">Minha vasta experiência com calistenia me garante criar treinos dinâmicos e funcionais para qualquer ambiente. Vamos extrair o melhor de você com as ferramentas que possuirmos. Uma academia completa é melhor, mas a gente trabalha com o que temos HOJE! Vou fazer você me enviar vídeos do seu ambiente, dos seus equipamentos, e vou construir tudo para que se encaixe nas suas possibilidades.</p>
                     </div>
                 </div>
@@ -525,7 +533,7 @@
                         <h3 class="text-xl font-bold text-white">"Tenho medo de me lesionar."</h3>
                         <svg :class="{'rotate-180': open}" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                     </button>
-                    <div x-show="open" x-transition class="p-6 pt-0">
+                    <div x-show="open" x-transition class="p-6 pt-0" style="display: none;">
                         <p class="text-gray-400 font-light">Treinar pesado é o erro! O treino tem que ser INTENSO, não só pesado. Peso é só uma das variáveis. Com minha especialização em Biomecânica, vamos melhorar sua mobilidade para trabalhar com mais amplitude, garantindo máximo estímulo muscular com menos carga e menos estresse desnecessário nas articulações. A técnica que ensino e corrijo garante que seus movimentos sejam seguros. O sucesso é garantido.</p>
                     </div>
                 </div>
@@ -534,7 +542,7 @@
                         <h3 class="text-xl font-bold text-white">"Minha rotina é caótica, não tenho tempo."</h3>
                         <svg :class="{'rotate-180': open}" class="w-6 h-6 text-gray-400 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                     </button>
-                    <div x-show="open" x-transition class="p-6 pt-0">
+                    <div x-show="open" x-transition class="p-6 pt-0" style="display: none;">
                         <p class="text-gray-400 font-light">Meu método foi desenhado para a sua realidade. Chegou no hotel às 23h, cansado? Você tem um chão. Com um treino de 20 a 30 minutos, garantimos sua atividade mínima. Sou especialista em criar Planos B para que você sempre tenha uma carta na manga. O que importa é o volume semanal e o balanço calórico, e você aprenderá a administrar isso com as ferramentas que eu te forneço.</p>
                     </div>
                 </div>
@@ -543,7 +551,7 @@
     </section>
 
     <!-- FINAL CTA SECTION -->
-    <section id="cta" class="py-20 md:py-32 bg-black">
+    <section id="cta" class="py-20 md:py-32 bg-[#050505]">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-5xl md:text-6xl uppercase">Transforme Seu Corpo e Sua Vida.</h2>
             <p class="max-w-3xl mx-auto text-lg text-gray-400 mt-4 mb-8 font-light">
@@ -581,7 +589,7 @@
                 <div class="text-center lg:text-left">
                     <h3 class="text-4xl mb-6">Entre em Contato</h3>
                     <div class="space-y-6">
-                        <a href="https://wa.me/554899157545" target="_blank" class="flex items-center justify-center lg:justify-start text-lg text-gray-300 hover:text-white transition-colors">
+                        <a href="https://wa.me/5548991575545" target="_blank" class="flex items-center justify-center lg:justify-start text-lg text-gray-300 hover:text-white transition-colors">
                             <svg class="w-6 h-6 mr-3 text-brand-green" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.61 15.35 3.48 16.84L2.06 22L7.31 20.52C8.75 21.32 10.36 21.8 12.04 21.8H12.05C17.5 21.8 21.95 17.35 21.95 11.89C21.95 9.22 20.9 6.78 19.05 4.93C17.2 3.1 14.76 2.03 12.04 2Z"/></svg>
                             <span>WhatsApp Posh Center</span>
                         </a>
@@ -623,9 +631,9 @@
                 loop: true,
                 slidesPerView: 1,
                 effect: 'fade',
-                autoplay: { delay: 1000, disableOnInteraction: false },
-                pagination: { el: '.about-carousel-card .swiper-pagination', clickable: true },
-                navigation: { nextEl: '.about-carousel-card .swiper-button-next', prevEl: '.about-carousel-card .swiper-button-prev' },
+                autoplay: { delay: 3000, disableOnInteraction: false },
+                pagination: { el: '.about-carousel .swiper-pagination', clickable: true },
+                navigation: { nextEl: '.about-carousel .swiper-button-next', prevEl: '.about-carousel .swiper-button-prev' },
             });
 
             // Initialize Gym Carousel
@@ -634,11 +642,11 @@
                 slidesPerView: 1,
                 effect: 'fade',
                 autoplay: { 
-                    delay: 1000, 
+                    delay: 3000, 
                     disableOnInteraction: false 
                 },
                 pagination: { 
-                    el: '.gym-carousel-container .swiper-pagination', 
+                    el: '.gym-carousel .swiper-pagination', 
                     clickable: true 
                 },
             });
@@ -653,7 +661,7 @@
                 },
                 speed: 600,
                 pagination: {
-                    el: '.app-carousel-container .swiper-pagination',
+                    el: '.app-carousel .swiper-pagination',
                     clickable: true,
                 },
             });
